@@ -163,14 +163,16 @@ __END__
 
 =head1 NAME
 
-Csv2Xls - Convert one or more csv to one xls.
+Csv2Xls - Convert one or more csv to one xls
 
 =head1 SYNOPSIS
 
 #Example of csv1.csv file
 
 titlecolumn1;titlecolumn2;titlecolumn3;
+
 aaa;bbb;ccc;
+
 fff;ggg;hhh;
 
 -------------------------------------------------------------------
