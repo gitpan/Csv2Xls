@@ -22,7 +22,7 @@ our @EXPORT = qw(new convert
 
 );
 
-our $VERSION = '0.03';
+our $VERSION = '0.04';
 
 sub new() { #constructor
     my $class   = shift;
@@ -62,7 +62,6 @@ sub convert() { #conversion method
     my $primacolonna;
     my $riga;
     my $colonna;
-    my $mix;
     my $campo;
     my $linea;
     my $this;
@@ -72,7 +71,6 @@ sub convert() { #conversion method
 
     $this   = shift;
     $foglio = Spreadsheet::WriteExcel->new( $this->{nomefile} );
-    $mix    = $foglio->set_custom_color( 12, 0, 70, 127 );
 
     foreach $csv (@_) {
 
@@ -169,23 +167,23 @@ Csv2Xls - Convert one or more csv to one xls.
 
 =head1 SYNOPSIS
 
-#Example of .csv file
+#Example of csv1.csv file
 
 titlecolumn1;titlecolumn2;titlecolumn3;
-
 aaa;bbb;ccc;
-
 fff;ggg;hhh;
 
-###################
+-------------------------------------------------------------------
 
 use Csv2Xls;
 
 @fileCsv = ('csv1.csv', 'csv2.csv');
 
-%hashRef = (fileName=>'test.xls',  
+%hashRef = (
 
-                  titleAlign =>'center', #left, right
+                  fileName=>'test.xls',  
+
+                  titleAlign =>'center', 
 
                   standardAlign=>'left', 
 
@@ -220,7 +218,7 @@ $instance1->convert(@fileCsv); #conversion method
 
 =head1 AUTHOR
 
-Cladi, E<lt>cladi@cpan.org<gt>
+Cladi,  cladi@cpan.org
 
 =head1 COPYRIGHT AND LICENSE
 
