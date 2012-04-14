@@ -22,7 +22,7 @@ our @EXPORT = qw(new convert
 
 );
 
-our $VERSION = '0.02';
+our $VERSION = '0.03';
 
 sub new() { #constructor
     my $class   = shift;
@@ -169,10 +169,12 @@ Csv2Xls - Convert one or more csv to one xls.
 
 =head1 SYNOPSIS
 
-#Example of csv
+#Example of .csv file
 
 titlecolumn1;titlecolumn2;titlecolumn3;
+
 aaa;bbb;ccc;
+
 fff;ggg;hhh;
 
 ###################
@@ -182,22 +184,37 @@ use Csv2Xls;
 @fileCsv = ('csv1.csv', 'csv2.csv');
 
 %hashRef = (fileName=>'test.xls',  
+
                   titleAlign =>'center', #left, right
+
                   standardAlign=>'left', 
+
                   columnSize=> 30, 
+
                   titleColor=> 'white', 
+
                   firstColumnTextColor=>'white', 
+
                   backgroundFirstRow=>'yellow', 
+
                   boldFirstColumn=>'yes', 
+
                   boldTitle =>'yes',  
+
                   boldStandardText=>'yes', 
+
                   colorStandardText=>'black', 
+
                   backgroundStandardRow=>'yellow', #or 'null' 
+
                   backgroundFirstColumn=>'red',  #or 'null'
+
                   alignFirstColumn=>'center', 
+
                   );
 
 $instance1 = Csv2Xls->new(\%hashRef); #call the constructor
+
 $instance1->convert(@fileCsv); #conversion method
 
 
