@@ -1,0 +1,6 @@
+Changes
+Makefile.PL
+MANIFEST
+README
+t/Csv2Xls.t
+lib/Csv2Xls.pm
